@@ -10,6 +10,11 @@ const met = require('./met.js');
 
 app.use(express.static(publicDir));
 
+app.get('/', function(req, res) {
+    return res.send({
+        greet: 'Bienvenido a la API del examen 2'
+    })
+})
 app.get('/students/:id', function(req, res) {
     if(!req.params.id) {
         return res.send({
